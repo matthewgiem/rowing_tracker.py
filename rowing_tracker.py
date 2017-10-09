@@ -27,16 +27,23 @@ def new():
     times.append(new_session)
     history()
 
+logs = 0
 while True:
-    greeting()
-    prompt = raw_input(">>  ").lower()
-    if prompt == 'quit':
-        break
-    elif prompt == 'history':
-        history()
-    elif prompt == 'new':
-        new()
-    elif prompt == 'rules':
+    if logs == 0:
         greeting()
+    if logs < 10:
+        prompt = raw_input(">>  ").lower()
+        logs += 1
+        if prompt == 'quit':
+            break
+        elif prompt == 'history':
+            history()
+        elif prompt == 'new':
+            new()
+        elif prompt == 'rules':
+            logs = 0
+        else:
+            logs = 0
+            print("your answer didn't compute")
     else:
-        print("your answer didn't compute")
+        logs = 0
