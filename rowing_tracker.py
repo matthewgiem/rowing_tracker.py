@@ -47,3 +47,6 @@ while True:
             print("your answer didn't compute")
     else:
         logs = 0
+
+# need to add exception
+# need to add database
